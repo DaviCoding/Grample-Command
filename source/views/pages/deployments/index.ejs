@@ -1,0 +1,51 @@
+<%- include("../../layouts/main", {
+  title,
+  csrfToken,
+  currentUser,
+  body: `
+    <section class="intro compact">
+      <span class="eyebrow">Histórico</span>
+      <h1>Deployments</h1>
+    </section>
+
+    <section class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Projeto</th>
+            <th>Status</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Backup</th>
+            <th>Finalizado</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${deployments.length === 0 ? `
+            <tr>
+              <td colspan="6">Nenhum deployment executado.</td>
+            </tr>
+          ` : deployments.map((item) => `
+            <tr>
+              <td>${item.projectName}</td>
+              <td><span class="status ${item.status}">${item.status}</span></td>
+              <td><code>${item.fromCommit ? item.fromCommit.slice(0, 7) : "-"}</code></td>
+              <td><code>${item.toCommit ? item.toCommit.slice(0, 7) : "-"}</code></td>
+              <td>${item.backupFile ?? "-"}</td>
+              <td>${item.finishedAt ?? "-"}</td>
+            </tr>
+
+            <tr>
+              <td colspan="6">
+                <details>
+                  <summary>Logs</summary>
+                  <pre>${item.logs.join("\\n\\n")}</pre>
+                </details>
+              </td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </section>
+  `
+}) %>

@@ -1,0 +1,88 @@
+<%- include("../../layouts/main", {
+  title,
+  csrfToken,
+  currentUser,
+  body: `
+    <section class="intro compact">
+      <span class="eyebrow">Configuração</span>
+      <h1>Projetos</h1>
+      <p>Os projetos vêm de <code>source/storage/projects.json</code>. O path final usa <code>PROJECTS_BASE_PATH</code> + <code>directory</code>.</p>
+    </section>
+
+    <section class="repos">
+      ${projects.map((project) => `
+        <article class="repo-card">
+          <div class="repo-info">
+            <div>
+              <strong>${project.name}</strong>
+              <span>${project.repository}</span>
+              <span>${project.path}</span>
+            </div>
+
+            <span class="status ${project.status}">${project.status}</span>
+          </div>
+
+          <div class="commits">
+            <div>
+              <small>Branch</small>
+              <code>${project.branch}</code>
+            </div>
+
+            <div>
+              <small>Compose</small>
+              <code>${project.composeFile}</code>
+            </div>
+
+            <div>
+              <small>.env</small>
+              <span class="status ${project.envExists ? "initialized" : "pending"}">${project.envExists ? "criado" : "pendente"}</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            ${project.exists && !project.envExists ? `
+              <button type="button" class="button secondary" data-action="open-env-editor" data-project-id="${project.id}" data-project-name="${project.name}">
+                Criar .env
+              </button>
+            ` : ""}
+
+            ${!project.exists ? `
+              <button type="button" class="button secondary" disabled>
+                Inicialize para criar .env
+              </button>
+            ` : ""}
+
+            ${project.envExists ? `
+              <button type="button" class="button secondary" disabled>
+                .env jÃ¡ criado
+              </button>
+            ` : ""}
+          </div>
+        </article>
+      `).join("")}
+    </section>
+
+    <section class="env-modal hidden" data-env-modal aria-hidden="true">
+      <div class="env-modal-backdrop" data-action="close-env-editor"></div>
+      <div class="env-modal-panel" role="dialog" aria-modal="true" aria-labelledby="env-modal-title">
+        <header class="env-modal-header">
+          <div>
+            <small>Arquivo de ambiente</small>
+            <h2 id="env-modal-title">Criar .env</h2>
+            <p data-env-project-name>Escreva o conteÃºdo uma Ãºnica vez. O Command nÃ£o permite ler ou editar depois.</p>
+          </div>
+          <button type="button" class="button secondary" data-action="close-env-editor">Fechar</button>
+        </header>
+
+        <div id="env-editor" class="env-editor"></div>
+
+        <footer class="env-modal-footer">
+          <p>OperaÃ§Ã£o sensÃ­vel: o arquivo serÃ¡ criado com permissÃ£o restrita e falharÃ¡ se jÃ¡ existir.</p>
+          <button type="button" class="button primary" data-action="create-env">Criar .env</button>
+        </footer>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+  `
+}) %>

@@ -1,0 +1,80 @@
+<%- include("../../layouts/main", {
+  title,
+  csrfToken,
+  currentUser,
+  body: `
+    <section class="intro compact">
+      <span class="eyebrow">Runtime</span>
+      <h1>Execução</h1>
+      <p>Controle individual de Docker Compose por repositório: status, start, stop, restart, rebuild, down e logs.</p>
+    </section>
+
+    <section class="repos">
+      ${projects.map((project) => `
+        <article class="repo-card" data-execution-card="${project.projectId}">
+          <div class="repo-info">
+            <div>
+              <strong>${project.projectName}</strong>
+              <span>${project.path}</span>
+              ${project.error ? `<em>${project.error}</em>` : ""}
+            </div>
+
+            <span class="status ${project.state}" data-runtime-state="${project.projectId}">
+              ${project.state}
+            </span>
+          </div>
+
+          <div class="commits runtime-grid">
+            <div>
+              <small>Compose</small>
+              <code>${project.composeFile}</code>
+            </div>
+
+            <div>
+              <small>Containers</small>
+              <code data-runtime-count="${project.projectId}">${project.containers.length}</code>
+            </div>
+          </div>
+
+          <div class="runtime-containers" data-runtime-containers="${project.projectId}">
+            ${
+              project.containers.length
+                ? project.containers.map((container) => `
+                    <div class="runtime-container">
+                      <strong>${container.service}</strong>
+                      <span>${container.name}</span>
+                      <span class="status ${container.state.toLowerCase()}">${container.health || container.state}</span>
+                    </div>
+                  `).join("")
+                : `<span class="empty-runtime">Nenhum container encontrado.</span>`
+            }
+          </div>
+
+          <div class="actions runtime-actions">
+            <button class="button secondary" data-action="runtime-status" data-project-id="${project.projectId}">
+              Status
+            </button>
+            <button class="button secondary" data-action="runtime-logs" data-project-id="${project.projectId}">
+              Logs
+            </button>
+            <button class="button secondary" data-action="runtime-start" data-project-id="${project.projectId}" ${project.exists ? "" : "disabled"}>
+              Start
+            </button>
+            <button class="button secondary" data-action="runtime-stop" data-project-id="${project.projectId}" ${project.exists ? "" : "disabled"}>
+              Stop
+            </button>
+            <button class="button secondary" data-action="runtime-restart" data-project-id="${project.projectId}" ${project.exists ? "" : "disabled"}>
+              Restart
+            </button>
+            <button class="button primary" data-action="runtime-rebuild" data-project-id="${project.projectId}" ${project.exists ? "" : "disabled"}>
+              Rebuild
+            </button>
+            <button class="button danger" data-action="runtime-down" data-project-id="${project.projectId}" ${project.exists ? "" : "disabled"}>
+              Down
+            </button>
+          </div>
+        </article>
+      `).join("")}
+    </section>
+  `
+}) %>

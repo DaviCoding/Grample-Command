@@ -1,0 +1,431 @@
+[
+  {
+    "id": "d2281215-2db6-4229-a2d7-b2ce821492de",
+    "actor": "txdavii",
+    "action": "auth.sign_out",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-03T12:29:34.641Z"
+  },
+  {
+    "id": "87dc1270-fe60-46eb-8a1c-6108a6e7e805",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-03T12:28:36.964Z"
+  },
+  {
+    "id": "76008765-4aed-47a4-9494-0435d7d753d3",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-03T12:28:28.880Z",
+    "metadata": {
+      "username": "txdavii"
+    }
+  },
+  {
+    "id": "0c944c3e-eb71-46fa-87d9-472a86213dc4",
+    "actor": "txdavii",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T13:13:45.659Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "d93405d2-8cd6-4d3e-a324-f7a2ca1f7f13",
+    "actor": "txdavii",
+    "action": "execution.stop",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T13:13:16.040Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "5024ef3c-4284-4d81-82e5-098ed45511e1",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T08:14:54.432Z",
+    "targetId": "grample-frontend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "4a70070d-d547-4e72-bf97-83c7e9e8d084",
+    "actor": "txdavii",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T07:52:43.628Z",
+    "targetId": "grample-frontend"
+  },
+  {
+    "id": "073b495a-be40-437e-86eb-8910b892605b",
+    "actor": "txdavii",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T07:50:31.703Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "48e3e6ea-cbaf-4ddb-9e0b-2296e09ef333",
+    "actor": "txdavii",
+    "action": "project.env.create",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T07:49:48.292Z",
+    "targetId": "grample-frontend"
+  },
+  {
+    "id": "f8fbcfee-ef66-4ef5-83fc-284372945d95",
+    "actor": "txdavii",
+    "action": "project.env.create",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T07:49:23.196Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "f2e3b941-d777-421f-96e4-dec47ca52c30",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-01T07:28:44.063Z"
+  },
+  {
+    "id": "a61c4457-9de5-4cce-827b-bca527fff852",
+    "actor": "txdavii",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T23:15:45.880Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "message": "time=\"2026-05-31T23:15:45Z\" level=warning msg=\"The \\\"INTERNAL_TOKEN\\\" variable is not set. Defaulting to a blank string.\"\nenv file /apps/grample-backend/.env not found: stat /apps/grample-backend/.env: no such file or directory"
+    }
+  },
+  {
+    "id": "c539cc8b-6c63-4fbc-b8a0-6614576c7bf6",
+    "actor": "txdavii",
+    "action": "project.initialize",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:28:07.538Z",
+    "targetId": "grample-frontend"
+  },
+  {
+    "id": "e684c233-8edf-4359-98df-a7f56984635d",
+    "actor": "txdavii",
+    "action": "project.initialize",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:27:33.490Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "392cbc96-1fc6-450b-9fd2-2e73518c2fda",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:25:22.703Z"
+  },
+  {
+    "id": "5388d361-6b0f-46ad-8439-2f88001bc8ea",
+    "actor": "txdavii",
+    "action": "auth.sign_out",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:20:16.123Z"
+  },
+  {
+    "id": "71665961-752f-4465-9a6a-91915b341cc5",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:19:34.800Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "15dd43ba-0222-4623-bb10-75605186d50b",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:14:28.713Z"
+  },
+  {
+    "id": "05c1c65f-7788-4350-88da-f927f8d0084d",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:14:17.756Z",
+    "metadata": {
+      "username": "davialves.xy@gmail.com"
+    }
+  },
+  {
+    "id": "35d896f1-8a8d-41eb-a803-a9ee5a328f3d",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:14:14.765Z",
+    "metadata": {
+      "username": "davialves.xy@gmail.com"
+    }
+  },
+  {
+    "id": "71c7cf07-fbf8-4dac-ad54-793b13db92b6",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:14:11.197Z",
+    "metadata": {
+      "username": "txdavii"
+    }
+  },
+  {
+    "id": "5644ebfd-30d3-407b-a726-6e8778261e69",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:14:06.375Z",
+    "metadata": {
+      "username": "davialves.xy@gmail.com"
+    }
+  },
+  {
+    "id": "fef3bcdf-e060-425c-897e-33a88b50887a",
+    "actor": "txdavii",
+    "action": "auth.sign_out",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:14:03.660Z"
+  },
+  {
+    "id": "2fe05619-f1a7-4210-bd24-094fee215f83",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:13:56.667Z"
+  },
+  {
+    "id": "52dc799a-ba97-46cb-897d-ea8035b29a31",
+    "actor": "anonymous",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:10:07.473Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "5b4b9ea3-d545-4b3d-8c07-bf47c5dcde1c",
+    "actor": "anonymous",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:00:51.178Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "11b2f89b-75a0-4a13-8fed-f6935250e126",
+    "actor": "anonymous",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:00:11.916Z",
+    "targetId": "grample-renderer"
+  },
+  {
+    "id": "2ab41ebb-dff3-47bc-843e-6fe3324e675e",
+    "actor": "anonymous",
+    "action": "execution.stop",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T17:00:02.357Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "5def2c4a-96f1-4983-94ed-5d3fe4fbfc0f",
+    "actor": "anonymous",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T16:59:19.462Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "db322cdb-4050-4185-b150-32e40e24cf89",
+    "actor": "anonymous",
+    "action": "execution.stop",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T16:58:54.691Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "64f335ad-ca2d-44ea-9d2e-2e963d08e34e",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; pt-BR) WindowsPowerShell/5.1.26100.8457",
+    "createdAt": "2026-05-31T16:09:55.066Z",
+    "metadata": {
+      "username": "txdavii"
+    }
+  },
+  {
+    "id": "df3facf1-5a4b-4160-b35a-25978524c6da",
+    "actor": "anonymous",
+    "action": "execution.rebuild",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T16:04:58.580Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "861ba576-88c4-4780-9e0e-4fe82c10adeb",
+    "actor": "anonymous",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T15:57:07.221Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "16274cf5-cc94-4d34-90a6-7ec907e37430",
+    "actor": "anonymous",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T15:56:01.990Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "message": " pgbouncer Pulling \n node Pulling \n node Warning pull access denied for grample-app, repository does not exist or may require 'docker login'\n pgbouncer Warning pull access denied for grample-pgbouncer, repository does not exist or may require 'docker login'\ntime=\"2026-05-31T15:47:00Z\" level=warning msg=\"Docker Compose is configured to build using Bake, but buildx isn't installed\"\nfailed to solve: image \"docker.io/library/grample-app:latest\": already exists"
+    }
+  },
+  {
+    "id": "f96b9dcc-1e27-4add-b355-8732c402d8f2",
+    "actor": "anonymous",
+    "action": "execution.rebuild",
+    "targetType": "project",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T15:56:01.884Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "message": "time=\"2026-05-31T15:49:32Z\" level=warning msg=\"Docker Compose is configured to build using Bake, but buildx isn't installed\"\nfailed to solve: image \"docker.io/library/grample-app:latest\": already exists"
+    }
+  },
+  {
+    "id": "c1bbd3fa-9c16-4d9e-8288-870d136ca600",
+    "actor": "anonymous",
+    "action": "execution.start",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T15:53:48.400Z",
+    "targetId": "grample-frontend"
+  },
+  {
+    "id": "c2cadb13-5d44-4ad5-9010-d0d2c422b639",
+    "actor": "anonymous",
+    "action": "execution.down",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-05-31T15:49:06.270Z",
+    "targetId": "grample-backend"
+  }
+]

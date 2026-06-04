@@ -1,0 +1,585 @@
+@import "tailwindcss";
+
+@source "../views/**/*.ejs";
+@source "../public/js/**/*.js";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #f6f7f9;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --primary: #111827;
+  --primary-foreground: #ffffff;
+  --destructive: #dc2626;
+  --success: #16a34a;
+  --warning: #b45309;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-slate-400/40;
+  }
+
+  html,
+  body {
+    @apply min-h-full bg-background text-foreground;
+  }
+
+  body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  p {
+    @apply mt-2 text-sm leading-6 text-muted-foreground;
+  }
+
+  h1 {
+    @apply mt-1 text-2xl font-semibold tracking-tight text-foreground md:text-3xl;
+  }
+
+  h2 {
+    @apply mt-1 text-xl font-semibold tracking-tight text-foreground;
+  }
+
+  small {
+    @apply mb-1 block text-[11px] font-semibold uppercase tracking-wide text-muted-foreground;
+  }
+
+  code {
+    @apply break-words rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground;
+  }
+
+  table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  th {
+    @apply border-b border-border bg-muted/50 px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-muted-foreground;
+  }
+
+  td {
+    @apply border-b border-border px-4 py-3 align-top text-sm;
+  }
+
+  summary {
+    @apply cursor-pointer text-xs font-semibold text-muted-foreground;
+  }
+}
+
+@layer components {
+  .app {
+    @apply grid min-h-screen bg-background text-foreground;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .container {
+    @apply w-full max-w-none;
+  }
+
+  .app-header {
+    @apply sticky top-0 z-50 grid min-h-16 w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 border-b border-border bg-card/95 px-5 py-3 shadow-sm backdrop-blur;
+  }
+
+  .brand {
+    @apply flex items-center rounded-md px-1 text-base font-semibold tracking-tight text-foreground;
+  }
+
+  .nav {
+    @apply flex min-w-0 items-center gap-1 overflow-x-auto;
+  }
+
+  .nav a {
+    @apply inline-flex h-9 shrink-0 items-center gap-2 rounded-md px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground;
+  }
+
+  .nav a.active {
+    @apply bg-slate-900 text-white shadow-sm hover:bg-slate-900 hover:text-white;
+  }
+
+  .nav-icon {
+    @apply size-4 shrink-0 opacity-80;
+  }
+
+  .header-session {
+    @apply flex shrink-0 items-center justify-end text-xs font-medium text-muted-foreground;
+  }
+
+  .logout-form {
+    @apply flex items-center gap-2;
+  }
+
+  .logout-form span {
+    @apply max-w-40 truncate text-xs font-semibold text-foreground;
+  }
+
+  .logout-form button {
+    @apply h-8 rounded-md border border-border bg-white px-3 text-xs font-semibold text-foreground transition-colors hover:bg-muted;
+  }
+
+  .main-shell {
+    @apply w-full max-w-none min-w-0 overflow-y-auto;
+    padding-bottom: 20rem;
+  }
+
+  .topbar {
+    @apply sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-card/95 px-6 backdrop-blur;
+  }
+
+  .topbar div:first-child {
+    @apply grid gap-0.5;
+  }
+
+  .topbar div:first-child span {
+    @apply text-[11px] font-semibold uppercase tracking-wide text-muted-foreground;
+  }
+
+  .topbar div:first-child strong {
+    @apply text-sm font-semibold text-foreground;
+  }
+
+  .topbar-user {
+    @apply rounded-md border border-border bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground;
+  }
+
+  .page-content {
+    @apply px-6 py-6;
+  }
+
+  .intro {
+    @apply mb-5;
+  }
+
+  .intro.compact {
+    @apply mb-4;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-wide text-muted-foreground;
+  }
+
+  .workspace-header {
+    @apply flex flex-wrap items-center justify-between gap-4 rounded-lg border border-border bg-card px-4 py-4 shadow-sm;
+  }
+
+  .repos {
+    @apply grid gap-3;
+  }
+
+  .repo-card,
+  .table-card,
+  .dashboard-panel,
+  .metric-card,
+  .chart-card {
+    @apply overflow-hidden rounded-lg border border-border bg-card shadow-sm;
+  }
+
+  .repo-card {
+    @apply p-4;
+  }
+
+  .repo-info {
+    @apply flex items-start justify-between gap-4;
+  }
+
+  .repo-info strong {
+    @apply block text-sm font-semibold tracking-tight text-foreground;
+  }
+
+  .repo-info span:not(.status),
+  .repo-info em {
+    @apply mt-1 block break-words text-xs not-italic text-muted-foreground;
+  }
+
+  .repo-info em {
+    @apply text-destructive;
+  }
+
+  .status {
+    @apply inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-border bg-muted px-2.5 py-1 text-[11px] font-semibold capitalize text-muted-foreground;
+  }
+
+  .status.synced,
+  .status.success,
+  .status.online,
+  .status.running,
+  .status.healthy,
+  .status.initialized {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-700;
+  }
+
+  .status.pending,
+  .status.skipped,
+  .status.partial,
+  .status.starting {
+    @apply border-amber-200 bg-amber-50 text-amber-700;
+  }
+
+  .status.failed,
+  .status.error,
+  .status.offline,
+  .status.exited,
+  .status.not_initialized {
+    @apply border-red-200 bg-red-50 text-red-700;
+  }
+
+  .commits {
+    @apply mt-4 grid grid-cols-1 gap-2 md:grid-cols-2;
+  }
+
+  .commits div {
+    @apply rounded-md border border-border bg-slate-50 px-3 py-2;
+  }
+
+  .actions {
+    @apply mt-4 flex flex-wrap justify-end gap-2;
+  }
+
+  .env-modal {
+    @apply fixed inset-0 z-50 grid place-items-center px-4 py-6;
+  }
+
+  .env-modal-backdrop {
+    @apply absolute inset-0 bg-slate-950/70 backdrop-blur-sm;
+  }
+
+  .env-modal-panel {
+    @apply relative z-10 flex h-[min(44rem,92vh)] w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-950 text-white shadow-2xl;
+  }
+
+  .env-modal-header {
+    @apply flex shrink-0 items-start justify-between gap-4 border-b border-slate-800 bg-slate-900 px-5 py-4;
+  }
+
+  .env-modal-header h2 {
+    @apply text-white;
+  }
+
+  .env-modal-header p {
+    @apply text-slate-400;
+  }
+
+  .env-editor {
+    @apply min-h-0 flex-1 bg-slate-950;
+  }
+
+  .env-editor-textarea {
+    @apply h-full w-full resize-none border-0 bg-slate-950 p-4 font-mono text-sm leading-6 text-slate-100 outline-none;
+  }
+
+  .env-modal-footer {
+    @apply flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-slate-800 bg-slate-900 px-5 py-4;
+  }
+
+  .env-modal-footer p {
+    @apply m-0 max-w-2xl text-xs text-slate-400;
+  }
+
+  .button {
+    @apply inline-flex h-9 cursor-pointer items-center justify-center rounded-md border border-border px-3 text-xs font-semibold transition-colors disabled:pointer-events-none disabled:opacity-45;
+  }
+
+  .button.primary {
+    @apply border-slate-900 bg-slate-900 text-white hover:bg-slate-800;
+  }
+
+  .button.secondary {
+    @apply bg-white text-foreground hover:bg-muted;
+  }
+
+  .button.danger {
+    @apply border-red-200 bg-red-50 text-red-700 hover:bg-red-100;
+  }
+
+  .metric-grid {
+    @apply mb-4 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4;
+  }
+
+  .metric-card {
+    @apply p-4;
+  }
+
+  .metric-card strong {
+    @apply mt-1 block text-2xl font-semibold tracking-tight;
+  }
+
+  .metric-card span {
+    @apply mt-1 block text-xs text-muted-foreground;
+  }
+
+  .chart-grid {
+    @apply mb-4 grid grid-cols-1 gap-3 xl:grid-cols-3;
+  }
+
+  .chart-card {
+    @apply p-4;
+  }
+
+  .chart-header {
+    @apply mb-4 flex items-start justify-between gap-3;
+  }
+
+  .chart-header strong {
+    @apply block text-sm font-semibold;
+  }
+
+  .chart-header span {
+    @apply rounded-full border border-border bg-muted px-2 py-1 text-xs font-semibold;
+  }
+
+  .mini-chart {
+    @apply flex h-28 items-end gap-1.5 rounded-md border border-border bg-slate-50 px-3 py-3;
+  }
+
+  .mini-chart span {
+    @apply flex-1 rounded-t-sm bg-slate-900 transition-all;
+    min-height: 6%;
+  }
+
+  .dashboard-grid {
+    @apply grid grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(24rem,0.65fr)];
+  }
+
+  .dashboard-panel {
+    @apply p-4;
+  }
+
+  .panel-header {
+    @apply mb-4 flex items-start justify-between gap-3 border-b border-border pb-3;
+  }
+
+  .panel-header strong {
+    @apply block text-sm font-semibold;
+  }
+
+  .panel-header a,
+  .panel-header span {
+    @apply text-xs font-medium text-muted-foreground;
+  }
+
+  .deploy-list {
+    @apply grid gap-2;
+  }
+
+  .deploy-item {
+    @apply flex items-center justify-between gap-3 rounded-md border border-border bg-slate-50 px-3 py-2;
+  }
+
+  .deploy-item strong {
+    @apply block text-sm font-medium;
+  }
+
+  .deploy-item span:not(.status) {
+    @apply mt-0.5 block text-xs text-muted-foreground;
+  }
+
+  .runtime-grid {
+    @apply md:grid-cols-[minmax(0,1fr)_9rem];
+  }
+
+  .runtime-containers {
+    @apply mt-3 grid gap-2;
+  }
+
+  .runtime-container {
+    @apply grid items-center gap-2 rounded-md border border-border bg-slate-50 px-3 py-2 text-xs md:grid-cols-[9rem_minmax(0,1fr)_auto];
+  }
+
+  .runtime-container strong {
+    @apply break-words text-foreground;
+  }
+
+  .runtime-container span:not(.status) {
+    @apply break-words text-muted-foreground;
+  }
+
+  .empty-runtime {
+    @apply block px-1 py-1 text-xs text-muted-foreground;
+  }
+
+  .terminal-panel {
+    @apply fixed bottom-0 right-0 z-40 flex h-72 flex-col overflow-hidden border-t border-slate-800 bg-slate-950 text-slate-100 shadow-2xl transition-transform duration-200;
+    left: 0;
+  }
+
+  .terminal-header {
+    @apply flex h-11 shrink-0 items-center justify-between border-b border-slate-800 px-4;
+  }
+
+  .terminal-header div {
+    @apply flex items-center gap-3;
+  }
+
+  .terminal-header strong {
+    @apply text-sm font-semibold text-white;
+  }
+
+  #log-status {
+    @apply text-xs font-medium text-slate-400;
+  }
+
+  .terminal-toggle {
+    @apply h-7 rounded-md border border-slate-700 bg-slate-900 px-2.5 text-xs font-medium text-slate-300 transition-colors hover:bg-slate-800 hover:text-white;
+  }
+
+  .terminal-panel.terminal-collapsed {
+    transform: translateY(calc(100% - 2.75rem));
+  }
+
+  pre#deploy-log {
+    @apply m-0 flex-1 overflow-auto whitespace-pre-wrap break-all bg-slate-950 p-4 font-mono text-xs leading-6 text-slate-100;
+  }
+
+  .auth-page {
+    @apply min-h-screen bg-slate-950 text-white;
+  }
+
+  .auth-page .brand {
+    @apply px-0 text-lg text-white;
+  }
+
+  .auth-shell {
+    @apply grid min-h-screen place-items-center px-4 py-8;
+  }
+
+  .auth-panel {
+    @apply grid w-full max-w-5xl overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-2xl lg:grid-cols-[1.1fr_0.9fr];
+  }
+
+  .auth-visual {
+    @apply flex min-h-[32rem] flex-col justify-between bg-slate-950 p-8;
+  }
+
+  .auth-visual h1 {
+    @apply max-w-lg text-4xl font-semibold tracking-tight text-white;
+  }
+
+  .auth-visual p {
+    @apply max-w-md text-slate-400;
+  }
+
+  .auth-security-list {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .auth-security-list span {
+    @apply rounded-full border border-slate-700 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300;
+  }
+
+  .auth-card {
+    @apply flex flex-col justify-center bg-white p-8 text-foreground;
+  }
+
+  .auth-copy {
+    @apply mb-6;
+  }
+
+  .auth-form {
+    @apply grid gap-4;
+  }
+
+  .auth-form label {
+    @apply grid gap-2 text-sm font-medium text-foreground;
+  }
+
+  .auth-form input {
+    @apply h-10 rounded-md border border-border bg-background px-3 text-sm outline-none transition-colors focus:border-slate-900;
+  }
+
+  .auth-form .button {
+    @apply mt-2 h-10;
+  }
+
+  .auth-error {
+    @apply mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-700;
+  }
+}
+
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .app-header {
+    @apply grid-cols-1 gap-3 px-4;
+  }
+
+  .brand {
+    @apply justify-center;
+  }
+
+  .nav {
+    @apply justify-start;
+  }
+
+  .header-session {
+    @apply justify-center;
+  }
+
+  .terminal-panel {
+    @apply left-0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af transparent;
+}
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+}

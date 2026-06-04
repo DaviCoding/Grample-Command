@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <%- include("../../partials/head", { title }) %>
+  </head>
+  <body class="auth-page">
+    <main class="auth-shell">
+      <section class="auth-panel">
+        <div class="auth-visual">
+          <a class="brand auth-brand" href="/sign-in">Grample</a>
+
+          <div>
+            <span class="eyebrow">Painel técnico interno</span>
+            <h1>Controle seguro da infraestrutura Grample.</h1>
+          </div>
+
+          <div class="auth-security-list">
+            <span>Rate limit ativo</span>
+          </div>
+        </div>
+
+        <section class="auth-card">
+          <div class="auth-copy">
+            <span class="eyebrow">Autenticação</span>
+            <h2>Entrar</h2>
+          </div>
+
+          <% if (typeof error !== "undefined" && error) { %>
+            <div class="auth-error"><%= error %></div>
+          <% } %>
+
+          <form method="post" action="/sign-in" class="auth-form">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            
+            <label>
+              <input name="text1" type="password" required />
+            </label>
+
+            <label>
+              <input name="text2" type="password" required />
+            </label>
+
+            <button type="submit" class="button primary">Entrar no Command</button>
+          </form>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

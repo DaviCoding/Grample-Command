@@ -1,0 +1,24 @@
+services:
+  grample-command:
+    build: .
+    container_name: grample-command
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+      - forge_node_modules:/app/node_modules
+      - /var/run/docker.sock:/var/run/docker.sock
+      - "${PROJECTS_HOST_PATH}:/apps"
+      - "${BACKUPS_HOST_PATH}:/backups"
+    networks:
+      - grample_net
+
+volumes:
+  forge_node_modules:
+
+networks:
+  grample_net:
+    external: true

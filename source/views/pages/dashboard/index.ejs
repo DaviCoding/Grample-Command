@@ -1,0 +1,169 @@
+<%
+  const onlineProjects = projects.filter((project) => project.exists).length;
+  const offlineProjects = projects.length - onlineProjects;
+  const failedDeployments = deployments.filter((deployment) => deployment.status === "failed").length;
+  const formatBytes = (value) => {
+    if (!value) return "-";
+    const units = ["B", "KB", "MB", "GB", "TB"];
+    let size = value;
+    let unit = 0;
+    while (size >= 1024 && unit < units.length - 1) {
+      size = size / 1024;
+      unit += 1;
+    }
+    return `${size.toFixed(size >= 10 ? 0 : 1)} ${units[unit]}`;
+  };
+  const bars = (items) => items.map((value) => `<span style="height:${value}%" title="${value}%"></span>`).join("");
+%>
+
+<%- include("../../layouts/main", {
+  title,
+  csrfToken,
+  currentUser,
+  body: `
+    <section class="intro">
+      <div class="workspace-header">
+        <div>
+          <span class="eyebrow">Command center</span>
+          <h1>Operação técnica da Grample.</h1>
+          <p>Controle repositórios, execução Docker, deploys e saúde dos serviços sem carregar Git remoto automaticamente.</p>
+        </div>
+        <a class="button secondary" href="/execution">Gerenciar execução</a>
+      </div>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <small>Projetos online</small>
+        <strong>${onlineProjects}</strong>
+        <span>${offlineProjects} offline ou não inicializado(s)</span>
+      </article>
+
+      <article class="metric-card">
+        <small>CPU</small>
+        <strong>${metrics.cpu.percent}%</strong>
+        <span>${metrics.cpu.cores} core(s) · load ${metrics.cpu.load}</span>
+      </article>
+
+      <article class="metric-card">
+        <small>RAM</small>
+        <strong>${metrics.memory.percent}%</strong>
+        <span>${formatBytes(metrics.memory.used)} / ${formatBytes(metrics.memory.total)}</span>
+      </article>
+
+      <article class="metric-card">
+        <small>Docker</small>
+        <strong>${metrics.docker.available ? metrics.docker.running : "-"}</strong>
+        <span>${metrics.docker.available ? `${metrics.docker.unhealthy} unhealthy` : "Docker indisponível"}</span>
+      </article>
+    </section>
+
+    <section class="chart-grid">
+      <article class="chart-card">
+        <div class="chart-header">
+          <div>
+            <small>CPU</small>
+            <strong>Tendência de carga</strong>
+          </div>
+          <span>${metrics.cpu.percent}%</span>
+        </div>
+        <div class="mini-chart">${bars(metrics.history.cpu)}</div>
+      </article>
+
+      <article class="chart-card">
+        <div class="chart-header">
+          <div>
+            <small>Memória</small>
+            <strong>Uso recente</strong>
+          </div>
+          <span>${metrics.memory.percent}%</span>
+        </div>
+        <div class="mini-chart">${bars(metrics.history.memory)}</div>
+      </article>
+
+      <article class="chart-card">
+        <div class="chart-header">
+          <div>
+            <small>Disco</small>
+            <strong>Capacidade</strong>
+          </div>
+          <span>${metrics.disk.percent}%</span>
+        </div>
+        <div class="mini-chart">${bars(metrics.history.disk)}</div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="dashboard-panel">
+        <div class="panel-header">
+          <div>
+            <small>Repositórios</small>
+            <strong>Projetos cadastrados</strong>
+          </div>
+          <a href="/projects">Ver todos</a>
+        </div>
+
+        <div class="repos compact-repos">
+          ${projects.map((project) => `
+            <article class="repo-card" data-project-card="${project.id}">
+              <div class="repo-info">
+                <div>
+                  <strong>${project.name}</strong>
+                  <span>${project.path}</span>
+                  ${project.error ? `<em>${project.error}</em>` : ""}
+                </div>
+
+                <span class="status ${project.status}">
+                  ${project.exists ? "local" : "não inicializado"}
+                </span>
+              </div>
+
+              <div class="commits">
+                <div>
+                  <small>Local</small>
+                  <code data-current="${project.id}">${project.currentCommit}</code>
+                </div>
+
+                <div>
+                  <small>Remote</small>
+                  <code data-remote="${project.id}">${project.remoteCommit}</code>
+                </div>
+              </div>
+
+              <div class="actions">
+                ${
+                  !project.exists || project.status === "not_initialized"
+                    ? `<button class="button primary" data-action="initialize" data-project-id="${project.id}">Criar projeto</button>`
+                    : `<button class="button secondary" data-action="check" data-project-id="${project.id}">Verificar pull</button>
+                      <button class="button primary" data-action="deploy" data-project-id="${project.id}" disabled>Atualizar</button>`
+                }
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+
+      <div class="dashboard-panel">
+        <div class="panel-header">
+          <div>
+            <small>Deploys</small>
+            <strong>Últimas execuções</strong>
+          </div>
+          <span>${failedDeployments} falha(s)</span>
+        </div>
+
+        <div class="deploy-list">
+          ${deployments.length ? deployments.map((deployment) => `
+            <div class="deploy-item">
+              <div>
+                <strong>${deployment.projectName}</strong>
+                <span>${deployment.finishedAt ? new Date(deployment.finishedAt).toLocaleString("pt-BR") : "em andamento"}</span>
+              </div>
+              <span class="status ${deployment.status}">${deployment.status}</span>
+            </div>
+          `).join("") : `<p>Nenhum deploy registrado.</p>`}
+        </div>
+      </div>
+    </section>
+  `
+}) %>

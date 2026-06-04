@@ -1,0 +1,43 @@
+<%- include("../../layouts/main", {
+  title,
+  csrfToken,
+  currentUser,
+  body: `
+    <section class="intro compact">
+      <span class="eyebrow">Observabilidade</span>
+      <h1>Auditoria</h1>
+      <p>Registro das ações técnicas executadas dentro do Command.</p>
+    </section>
+
+    <section class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Ator</th>
+            <th>Ação</th>
+            <th>Alvo</th>
+            <th>Status</th>
+            <th>IP</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${events.map((event) => `
+            <tr>
+              <td>${new Date(event.createdAt).toLocaleString("pt-BR")}</td>
+              <td>${event.actor}</td>
+              <td><code>${event.action}</code></td>
+              <td>${event.targetType}${event.targetId ? `/${event.targetId}` : ""}</td>
+              <td><span class="status ${event.status === "success" ? "success" : "failed"}">${event.status}</span></td>
+              <td><code>${event.ip}</code></td>
+            </tr>
+          `).join("") || `
+            <tr>
+              <td colspan="6">Nenhum evento registrado.</td>
+            </tr>
+          `}
+        </tbody>
+      </table>
+    </section>
+  `
+}) %>
