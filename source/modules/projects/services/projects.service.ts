@@ -244,6 +244,8 @@ export class ProjectsService {
         const init = await this.initialize(project.id);
         stepLogs.push(...init.logs);
       } else {
+        stepLogs.push(...await this.updateExistingProject(project));
+
         const adopted = await this.adoptExistingEnvIfNeeded(project);
         stepLogs.push(adopted.message);
 
@@ -369,6 +371,27 @@ export class ProjectsService {
       flag: "wx",
       mode: 0o600
     });
+  }
+
+  private async updateExistingProject(project: Project) {
+    const projectPath = this.resolvePath(project);
+    const logs: string[] = [];
+    const status = await this.git.check(projectPath, project.branch);
+    logs.push(...status.logs);
+
+    if (!status.updateAvailable) {
+      logs.push(`${project.id}: repository already up to date.`);
+      return logs;
+    }
+
+    const pull = await this.git.pull(projectPath, project.branch);
+    logs.push([`$ ${pull.command}`, pull.stdout, pull.stderr].filter(Boolean).join("\n"));
+
+    if (pull.exitCode !== 0) {
+      throw new Error(`${project.id}: git pull failed\n${pull.stderr}`);
+    }
+
+    return logs;
   }
 
   private async waitForHealth(project: Project) {
