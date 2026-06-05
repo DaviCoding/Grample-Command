@@ -4,9 +4,14 @@
   currentUser,
   body: `
     <section class="intro compact">
-      <span class="eyebrow">Configuração</span>
+      <span class="eyebrow">Configuracao</span>
       <h1>Projetos</h1>
-      <p>Os projetos vêm de <code>source/storage/projects.json</code>. O path final usa <code>PROJECTS_BASE_PATH</code> + <code>directory</code>.</p>
+      <p>O Command e o bootstrapper tecnico da Grample: cadastra projetos, guarda os .env no vault local, clona, valida Docker Compose e sobe os servicos na ordem correta.</p>
+      <div class="actions">
+        <button type="button" class="button primary" data-action="bootstrap-grample">
+          Inicializar Grample
+        </button>
+      </div>
     </section>
 
     <section class="repos">
@@ -34,27 +39,32 @@
             </div>
 
             <div>
-              <small>.env</small>
+              <small>.env no projeto</small>
               <span class="status ${project.envExists ? "initialized" : "pending"}">${project.envExists ? "criado" : "pendente"}</span>
+            </div>
+
+            <div>
+              <small>.env no vault</small>
+              <span class="status ${project.storedEnvExists ? "initialized" : "pending"}">${project.storedEnvExists ? "guardado" : "pendente"}</span>
             </div>
           </div>
 
           <div class="actions">
-            ${project.exists && !project.envExists ? `
+            ${!project.storedEnvExists ? `
               <button type="button" class="button secondary" data-action="open-env-editor" data-project-id="${project.id}" data-project-name="${project.name}">
-                Criar .env
+                Criar .env no vault
               </button>
             ` : ""}
 
-            ${!project.exists ? `
-              <button type="button" class="button secondary" disabled>
-                Inicialize para criar .env
+            ${project.exists && project.envExists && !project.storedEnvExists ? `
+              <button type="button" class="button secondary" data-action="adopt-env" data-project-id="${project.id}">
+                Adotar .env existente
               </button>
             ` : ""}
 
-            ${project.envExists ? `
+            ${project.storedEnvExists ? `
               <button type="button" class="button secondary" disabled>
-                .env jÃ¡ criado
+                .env guardado
               </button>
             ` : ""}
           </div>
@@ -69,7 +79,7 @@
           <div>
             <small>Arquivo de ambiente</small>
             <h2 id="env-modal-title">Criar .env</h2>
-            <p data-env-project-name>Escreva o conteÃºdo uma Ãºnica vez. O Command nÃ£o permite ler ou editar depois.</p>
+            <p data-env-project-name>Escreva o conteudo uma unica vez. O Command guarda no vault e aplica no projeto antes de subir.</p>
           </div>
           <button type="button" class="button secondary" data-action="close-env-editor">Fechar</button>
         </header>
@@ -77,8 +87,8 @@
         <div id="env-editor" class="env-editor"></div>
 
         <footer class="env-modal-footer">
-          <p>OperaÃ§Ã£o sensÃ­vel: o arquivo serÃ¡ criado com permissÃ£o restrita e falharÃ¡ se jÃ¡ existir.</p>
-          <button type="button" class="button primary" data-action="create-env">Criar .env</button>
+          <p>Operacao sensivel: o arquivo sera criado com permissao restrita e falhara se ja existir.</p>
+          <button type="button" class="button primary" data-action="create-env">Criar .env no vault</button>
         </footer>
       </div>
     </section>

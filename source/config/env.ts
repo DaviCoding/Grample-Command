@@ -7,6 +7,8 @@ const schema = z.object({
   APP_HOST: z.string().default("0.0.0.0"),
   APP_PORT: z.coerce.number().int().positive().default(4000),
   PROJECTS_BASE_PATH: z.string().min(1),
+  PROJECTS_NETWORK_NAME: z.string().min(1).default("grample_net"),
+  PROJECT_ENVS_PATH: z.string().min(1).default("source/storage/envs"),
   GITHUB_TOKEN: z.string().optional(),
   BACKUP_DIR: z.string().default("/opt/command/backups"),
   COMMAND_ADMIN_USERNAME: z.string().min(3),

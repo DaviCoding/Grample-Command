@@ -6,3 +6,4 @@ dist
 .env.windows
 .env.linux
 .pnpm-store
+source/storage/envs

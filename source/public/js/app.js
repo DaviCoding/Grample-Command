@@ -114,6 +114,40 @@ document.querySelectorAll('[data-action="initialize"]').forEach((button) => {
   });
 });
 
+document.querySelector('[data-action="bootstrap-grample"]')?.addEventListener("click", async (event) => {
+  const button = event.currentTarget;
+  if (!(button instanceof HTMLButtonElement)) return;
+
+  const password = requestImpactPassword({
+    title: "Inicializar Grample",
+    message: "Isso vai criar a rede Docker, clonar repositorios ausentes, aplicar .env do vault, validar compose e subir backend, renderer e frontend."
+  });
+  if (!password) return;
+
+  setButtonLoading(button, true);
+  setStatus("Inicializando Grample");
+  writeLog("Executando bootstrap completo da Grample...");
+
+  try {
+    const data = await postJson("/projects/bootstrap-grample", { password });
+
+    setStatus(data.status);
+    writeLog([
+      `status: ${data.status}`,
+      `network: ${data.network}`,
+      "",
+      ...(data.logs ?? [])
+    ].join("\n"));
+
+    setTimeout(() => location.reload(), 1500);
+  } catch (error) {
+    setStatus("Erro");
+    writeLog(error instanceof Error ? error.message : "Erro desconhecido.");
+  } finally {
+    setButtonLoading(button, false);
+  }
+});
+
 const envModal = document.querySelector("[data-env-modal]");
 const envProjectName = document.querySelector("[data-env-project-name]");
 const envEditorHost = document.querySelector("#env-editor");
@@ -210,6 +244,41 @@ document.querySelectorAll('[data-action="open-env-editor"]').forEach((button) =>
 
 document.querySelectorAll('[data-action="close-env-editor"]').forEach((button) => {
   button.addEventListener("click", closeEnvModal);
+});
+
+document.querySelectorAll('[data-action="adopt-env"]').forEach((button) => {
+  button.addEventListener("click", async () => {
+    const projectId = button.dataset.projectId;
+    if (!projectId) return;
+
+    const password = requestImpactPassword({
+      title: `Adotar .env de ${projectId}`,
+      message: "Isso copia o .env existente do projeto para o vault do Command. Depois disso o Command consegue recriar o repo e reaplicar esse .env."
+    });
+    if (!password) return;
+
+    setButtonLoading(button, true);
+    setStatus("Adotando .env");
+    writeLog(`Adotando .env de ${projectId}...`);
+
+    try {
+      const data = await postJson(`/projects/${projectId}/env/adopt`, { password });
+
+      setStatus(".env adotado");
+      writeLog([
+        `project: ${data.projectId}`,
+        `status: ${data.status}`,
+        `storedPath: ${data.storedPath}`
+      ].join("\n"));
+
+      setTimeout(() => location.reload(), 1000);
+    } catch (error) {
+      setStatus("Erro");
+      writeLog(error instanceof Error ? error.message : "Erro desconhecido.");
+    } finally {
+      setButtonLoading(button, false);
+    }
+  });
 });
 
 createEnvButton?.addEventListener("click", async () => {

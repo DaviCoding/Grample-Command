@@ -73,6 +73,29 @@ export class ProjectsController {
     }
   }
 
+  async bootstrapGrample(request: FastifyRequest, reply: FastifyReply) {
+    try {
+      this.validateImpactPassword(request);
+      const result = await this.service.bootstrapGrample();
+      await this.audit.record(request, {
+        action: "project.bootstrap_grample",
+        targetType: "project",
+        status: "success"
+      });
+
+      return reply.send(result);
+    } catch (error) {
+      await this.audit.record(request, {
+        action: "project.bootstrap_grample",
+        targetType: "project",
+        status: "failure",
+        metadata: { message: error instanceof Error ? error.message : "unknown" }
+      });
+
+      throw error;
+    }
+  }
+
   async createEnv(request: FastifyRequest, reply: FastifyReply) {
     const { projectId } = request.params as ProjectParams;
 
@@ -99,6 +122,34 @@ export class ProjectsController {
     } catch (error) {
       await this.audit.record(request, {
         action: "project.env.create",
+        targetType: "project",
+        targetId: projectId,
+        status: "failure",
+        metadata: { message: error instanceof Error ? error.message : "unknown" }
+      });
+
+      throw error;
+    }
+  }
+
+  async adoptEnv(request: FastifyRequest, reply: FastifyReply) {
+    const { projectId } = request.params as ProjectParams;
+
+    try {
+      this.validateImpactPassword(request);
+      const result = await this.service.adoptEnv(projectId);
+
+      await this.audit.record(request, {
+        action: "project.env.adopt",
+        targetType: "project",
+        targetId: projectId,
+        status: "success"
+      });
+
+      return reply.send(result);
+    } catch (error) {
+      await this.audit.record(request, {
+        action: "project.env.adopt",
         targetType: "project",
         targetId: projectId,
         status: "failure",

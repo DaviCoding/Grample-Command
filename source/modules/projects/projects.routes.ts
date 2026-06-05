@@ -5,7 +5,9 @@ export async function projectsRoutes(app: FastifyInstance) {
   const controller = new ProjectsController();
 
   app.get("/", controller.index.bind(controller));
+  app.post("/bootstrap-grample", controller.bootstrapGrample.bind(controller));
+  app.post("/initialize-all", controller.initializeAll.bind(controller));
   app.post("/:projectId/initialize", controller.initialize.bind(controller));
   app.post("/:projectId/env", controller.createEnv.bind(controller));
-  app.post("/initialize-all", controller.initializeAll.bind(controller));
+  app.post("/:projectId/env/adopt", controller.adoptEnv.bind(controller));
 }

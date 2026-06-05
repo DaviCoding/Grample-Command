@@ -6,7 +6,7 @@
     "directory": "grample-backend",
     "branch": "main",
     "composeFile": "docker-compose.command.yml",
-    "healthcheckUrl": "http://grample-backend:1000",
+    "healthcheckUrl": "http://grample-node:1000/api/health",
     "databaseUrlEnv": "DATABASE_URL",
     "enabled": true
   },
@@ -17,7 +17,7 @@
     "directory": "grample-renderer",
     "branch": "main",
     "composeFile": "docker-compose.yml",
-    "healthcheckUrl": "http://grample-renderer:2000",
+    "healthcheckUrl": "http://grample-renderer:2000/_health",
     "databaseUrlEnv": null,
     "enabled": true
   },
