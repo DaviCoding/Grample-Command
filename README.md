@@ -153,7 +153,7 @@ O fluxo canonico para recriar a plataforma e:
 
 O botao `Inicializar Grample` executa, nessa ordem:
 
-1. Cria ou valida a rede Docker `grample_net`.
+1. Cria ou valida a rede Docker `grample_net` (o compose do proprio Command tambem cria essa rede no primeiro `up`).
 2. Garante o registry padrao dos projetos:
    - `grample-backend`
    - `grample-renderer`
