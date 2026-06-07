@@ -1,5 +1,332 @@
 [
   {
+    "id": "6bce9d91-02fa-4caf-b2fd-c7a003748257",
+    "actor": "txdavii",
+    "action": "execution.restart",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T18:19:21.182Z",
+    "targetId": "grample-frontend"
+  },
+  {
+    "id": "c7e5c576-bd09-4e59-bc90-ecfee52f028c",
+    "actor": "txdavii",
+    "action": "execution.restart",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T18:19:15.955Z",
+    "targetId": "grample-renderer"
+  },
+  {
+    "id": "c56d9aa2-4580-4b3c-a12e-608acd6d93eb",
+    "actor": "txdavii",
+    "action": "execution.restart",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T18:19:14.190Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "295b2275-3a3e-4dda-8497-048d96d71b82",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T18:18:58.122Z",
+    "targetId": "grample-renderer",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "b09b0d6f-df26-46e5-932d-a182108f23e2",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T18:18:57.560Z",
+    "targetId": "grample-frontend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "272f091d-fc49-4278-b4b2-f2b8a7b1c2ad",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T18:18:54.313Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "e9ea94a7-5456-40e1-9acc-3e4c7941636a",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T13:04:21.619Z",
+    "targetId": "grample-frontend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "e9cc8be2-1488-47c0-959a-51cd093d12c9",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T13:04:18.808Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "9777bc17-1529-4ca6-bd5d-b9293be05b76",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T13:03:27.054Z",
+    "targetId": "grample-renderer",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "1ab4c03f-71a2-494b-986d-875b52c1420a",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T13:02:34.890Z",
+    "targetId": "grample-renderer",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "4346d400-34a3-440d-88f8-49cb00f0d332",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T13:02:12.883Z",
+    "targetId": "grample-renderer",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "2daf9c28-b7c6-4ee5-bc8c-7132e997861b",
+    "actor": "txdavii",
+    "action": "execution.rebuild",
+    "targetType": "project",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T12:48:58.613Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "message": " redis Pulling \n a300455a02bb Pulling fs layer \n 941ebb020cf0 Pulling fs layer \n 4f4fb700ef54 Pulling fs layer \n c14c7509f545 Pulling fs layer \n f546396032e0 Pulling fs layer \n 897d797d2723 Pulling fs layer \n 677c7c5aa821 Pulling fs layer \n 4f4fb700ef54 Already exists \n a300455a02bb Downloading [====>                                              ]  1.049MB/12.41MB\n a300455a02bb Downloading [====>                                              ]  1.049MB/12.41MB\n a300455a02bb Downloading [========>                                          ]  2.097MB/12.41MB\n 941ebb020cf0 Download complete \n a300455a02bb Downloading [===========>                                       ]  2.892MB/12.41MB\n c14c7509f545 Download complete \n a300455a02bb Downloading [============>                                      ]  3.146MB/12.41MB\n 677c7c5aa821 Download complete \n a300455a02bb Downloading [============>                                      ]  3.146MB/12.41MB\n a300455a02bb Downloading [============>                                      ]  3.146MB/12.41MB\n a300455a02bb Downloading [================>                                  ]  4.194MB/12.41MB\n f546396032e0 Downloading [====================================>              ]  143.4kB/194.9kB\n a300455a02bb Downloading [=====================>                             ]  5.243MB/12.41MB\n f546396032e0 Download complete \n a300455a02bb Downloading [=====================>                             ]  5.243MB/12.41MB\n a300455a02bb Downloading [=====================>                             ]  5.243MB/12.41MB\n 897d797d2723 Downloading [==============>                                    ]  1.049MB/3.647MB\n a300455a02bb Downloading [=========================>                         ]  6.291MB/12.41MB\n 897d797d2723 Downloading [==============>                                    ]  1.049MB/3.647MB\n a300455a02bb Downloading [=========================>                         ]  6.291MB/12.41MB\n 897d797d2723 Downloading [==============>                                    ]  1.049MB/3.647MB\n a300455a02bb Downloading [=============================>                     ]   7.34MB/12.41MB\n 897d797d2723 Downloading [============================>                      ]  2.097MB/3.647MB\n a300455a02bb Downloading [=================================>                 ]  8.389MB/12.41MB\n 897d797d2723 Downloading [============================>                      ]  2.097MB/3.647MB\n a300455a02bb Downloading [=================================>                 ]  8.389MB/12.41MB\n 897d797d2723 Downloading [===========================================>       ]  3.146MB/3.647MB\n a300455a02bb Downloading [=================================>                 ]  8.389MB/12.41MB\n 897d797d2723 Downloading [==================================================>]  3.647MB/3.647MB\n a300455a02bb Downloading [======================================>            ]  9.437MB/12.41MB\n 897d797d2723 Download complete \n a300455a02bb Downloading [======================================>            ]  9.437MB/12.41MB\n 897d797d2723 Extracting 1 s\n a300455a02bb Downloading [==========================================>        ]  10.49MB/12.41MB\n 897d797d2723 Extracting 1 s\n a300455a02bb Downloading [==============================================>    ]  11.53MB/12.41MB\n 897d797d2723 Extracting 1 s\n a300455a02bb Downloading [==================================================>]  12.41MB/12.41MB\n 897d797d2723 Extracting 1 s\n a300455a02bb Download complete \n c14c7509f545 Extracting 1 s\n 897d797d2723 Pull complete \n c14c7509f545 Pull complete \n f546396032e0 Extracting 1 s\n f546396032e0 Pull complete \n a300455a02bb Extracting 1 s\n a300455a02bb Extracting 1 s\n 4f4fb700ef54 Pull complete \n 941ebb020cf0 Pull complete \n a300455a02bb Pull complete \n 677c7c5aa821 Pull complete \n redis Pulled \ntime=\"2026-06-05T12:37:32Z\" level=warning msg=\"Docker Compose is configured to build using Bake, but buildx isn't installed\"\n node  Built\n openresty  Built\n pgbouncer  Built\n Container grample-postgres  Recreate\n Container grample-redis  Recreate\n Container grample-libretranslate  Recreate\n Container grample-redis  Recreated\n Container grample-openresty  Recreate\n Container grample-postgres  Recreated\n Container grample-pgadmin  Recreate\n Container grample-pgbouncer  Recreate\n Container grample-libretranslate  Recreated\n Container grample-pgbouncer  Recreated\n Container grample-node  Recreate\n Container grample-openresty  Recreated\n Container grample-pgadmin  Recreated\n Container grample-node  Recreated\n Container grample-libretranslate  Starting\n Container grample-postgres  Starting\n Container grample-redis  Starting\n Container grample-libretranslate  Started\n Container grample-postgres  Started\n Container grample-postgres  Waiting\n Container grample-postgres  Waiting\n Container grample-redis  Started\n Container grample-redis  Waiting\n Container grample-postgres  Healthy\n Container grample-pgadmin  Starting\n Container grample-postgres  Healthy\n Container grample-pgbouncer  Starting\n Container grample-pgadmin  Started\n Container grample-pgbouncer  Started\n Container grample-pgbouncer  Waiting\n Container grample-redis  Waiting\n Container grample-postgres  Waiting\n Container grample-postgres  Healthy\n Container grample-redis  Error\n Container grample-redis  Error\n Container grample-pgbouncer  Healthy\ndependency failed to start: container grample-redis is unhealthy"
+    }
+  },
+  {
+    "id": "407d499b-bd4c-42ab-90e9-50e1e2f24b8e",
+    "actor": "txdavii",
+    "action": "execution.restart",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T12:37:04.433Z",
+    "targetId": "grample-backend"
+  },
+  {
+    "id": "20bf52f9-852a-4604-ade8-4249e01c04d0",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T12:36:42.172Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "updateAvailable": false
+    }
+  },
+  {
+    "id": "183adbd6-8efb-4b0c-8648-73d6f1cebcd9",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-05T12:36:30.822Z"
+  },
+  {
+    "id": "9de7f5a4-1e4c-42f7-a5bd-7235d0196177",
+    "actor": "txdavii",
+    "action": "deployment.check",
+    "targetType": "project",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:51:37.682Z",
+    "targetId": "grample-backend",
+    "metadata": {
+      "message": "git fetch failed\nCommand: git fetch https://x-access-token:***@github.com/DaviCoding/Grample-Backend.git main\nExitCode: 128\nSTDERR:\nremote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/DaviCoding/Grample-Backend.git/'"
+    }
+  },
+  {
+    "id": "33993639-9a95-441b-8a38-430ca27fe44c",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:37:28.113Z"
+  },
+  {
+    "id": "593ae06f-c414-435b-a9f5-9c5d7db5a35e",
+    "actor": "txdavii",
+    "action": "auth.sign_out",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:37:17.990Z"
+  },
+  {
+    "id": "1bda27c0-af99-4960-af56-765354559f5a",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:36:35.263Z"
+  },
+  {
+    "id": "d362b20b-69ed-4b3f-abab-c8a058096d73",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:36:29.838Z",
+    "metadata": {
+      "username": "txdavii"
+    }
+  },
+  {
+    "id": "3bb16ae1-1846-45bf-83d3-0b4cff8fb55f",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:36:23.619Z",
+    "metadata": {
+      "username": "asdas"
+    }
+  },
+  {
+    "id": "9d091765-dc35-4668-9b1d-f051131dc45f",
+    "actor": "txdavii",
+    "action": "auth.sign_out",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T16:36:07.815Z"
+  },
+  {
+    "id": "e1e2c16e-4635-4631-be3d-9b086c1cc964",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T15:17:09.606Z"
+  },
+  {
+    "id": "e261c6e5-4b52-4537-b9a1-481a5750e947",
+    "actor": "anonymous",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "failure",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T15:16:59.715Z",
+    "metadata": {
+      "username": "tx.davii"
+    }
+  },
+  {
+    "id": "b7fc0f3e-3b06-439f-82cd-f124f329e71b",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T15:06:54.467Z"
+  },
+  {
+    "id": "1fa5a9ca-fe46-495c-b879-69f4eb391b57",
+    "actor": "txdavii",
+    "action": "auth.sign_out",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T15:06:47.083Z"
+  },
+  {
+    "id": "72660430-e404-4d7d-8163-53fe68962569",
+    "actor": "txdavii",
+    "action": "auth.sign_in",
+    "targetType": "session",
+    "status": "success",
+    "ip": "172.18.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T15:00:36.977Z"
+  },
+  {
     "id": "d2281215-2db6-4229-a2d7-b2ce821492de",
     "actor": "txdavii",
     "action": "auth.sign_out",
